@@ -1,0 +1,302 @@
+---
+title: "Ejercicios de Programación en R"
+author: Alfonso Carabantes Alamo (acca3003@gmail.com)
+tutorial:
+  version: 0.1
+output: 
+  learnr::tutorial:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+library(learnr)
+tutorial_options(exercise.eval = TRUE)
+
+```
+
+# Título en todas las páginas
+
+## Vectores
+
+### Ejercicio 1
+Veamos como crear un vector de la forma: $(1,2,3,4,5,6,7,8)$
+
+```{r }
+
+  1:8
+
+```
+
+Construye tu ahora un vector de la forma: $(7,8,9,10,11,12)$
+
+```{r e1_1, exercise=TRUE}
+
+  1:8
+
+```
+
+```{r e1_1-solution}
+7:12
+
+```
+
+
+Construye tu ahora un vector de la forma: $(15,14,13,12,11,10)$
+
+```{r e1_2, exercise=TRUE}
+
+  1:8
+
+```
+
+```{r e1_2-solution}
+15:10
+
+```
+
+### Ejercicio 2
+Veamos como crear un vector concatenando otros dos y obtener uno de la forma: $(1,2,3,4,5,6,7,8,7,6,5)$
+
+```{r }
+
+  c(1:8,7:5)
+
+```
+
+Construye tu ahora un vector de la forma: $(7,8,9,10,11,12,11,10,9)$
+
+```{r e2_1, exercise=TRUE}
+
+  c(1:8,7:5)
+
+```
+
+```{r e2_1-solution}
+
+  c(7:12,11:9)
+
+```
+### Ejercicio 3
+Veamos como asignar un vector a una variable para luego poderlo reutilizar en el código. Crearemos un vector con los valores $(4,7,10)$ y se lo asignaremos a la variable v1.
+
+```{r }
+
+  v1 <- c(4,7,10)
+  v1
+
+```
+
+Construye tu ahora un vector de la forma $(7,8,9,10,11,12,11,10,9)$
+
+```{r e3_1, exercise=TRUE}
+
+  v1 <- c(4,7,10)
+  v1
+
+```
+
+```{r e3_1-solution}
+
+  v1 <- c(7:12,11:9)
+  v1
+
+```
+
+Construye un vector $(5,6,7,8,9)$ y otro $(3,9,6)$, y guárdalos en las variables $v1$ y $v2$. Luego construye un nuevo vector $v3$ resultante de concatenar el $v1$ y el $v2$.
+
+```{r e3_2, exercise=TRUE}
+
+  v1 <- c(4,7,10)
+  v1
+
+```
+
+```{r e3_2-solution}
+
+  v1 <- 5:9
+  v2 <- c(3,9,6)
+  v3 <- c(v1,v2)
+  v3
+
+```
+### Ejercicio 4
+
+Veamos como crear un vector usando de forma repetitiva otro vector, para obtener uno de la forma $(1,2,3,1,3,1,2,3,1,2,3)$
+
+```{r }
+
+  rep(1:3,4)
+
+```
+
+Construye tu ahora un vector de la forma: $(8,7,6,8,7,6,8,7,6,8,7,6,8,7,6,8,7,6)$
+
+```{r e4_1, exercise=TRUE}
+
+  rep(1:3,4)
+
+```
+
+```{r e4_1-solution}
+
+  rep(8:6,6)
+
+```
+
+También podemos indicar el número de veces que queremos que se repita cada elemento de nuestro vector para conseguir un vector de las siguiente forma $(6,6,6,8,8,9,9,9,9,9,3)$
+
+```{r }
+
+  rep(c(6,8,9,3),times=c(3,2,5,1))
+
+```
+
+Construye tu ahora un vector de la forma: $(1,2,2,3,3,3,4,4,4,4,5,5,5,5,5)$
+
+```{r e4_2, exercise=TRUE}
+
+  rep(c(6,8,9,3),times=c(3,2,5,1))
+
+```
+
+```{r e4_2-solution}
+
+  rep(1:5,times=c(1:5))
+
+```
+
+Construye tu ahora un vector de la forma: $(2, \frac{2^2}{2},\frac{2^3}{3},\frac{2^4}{4},...,\frac{2^{10}{10})$
+
+```{r e4_3, exercise=TRUE}
+
+  rep(c(6,8,9,3),times=c(3,2,5,1))
+
+```
+
+```{r e4_3-solution}
+
+  2^(1:10)/(1:10)
+
+```
+
+Calcula la suma siguiente: $\sum_{i=5}^{10}(i^3+2i^2)$
+
+```{r e4_4, exercise=TRUE}
+
+  rep(c(6,8,9,3),times=c(3,2,5,1))
+
+```
+
+```{r e4_4-solution}
+
+  v1 <- 5:10
+  sum(v1^3+2*v1^2)
+
+```
+
+### Ejercicio 5
+
+Otra forma que tenemos de crear un vector de forma consecutiva es mediante el uso de `seq` que nos permite dar el valor inicial y el final, así como el tamaño del paso, pudiendo construir valores decimales. Veamos como crear un vector para obtener uno de la forma $(1,1.5,2,2.5,3,3.5,4)$
+
+```{r }
+
+  seq(1,4,by=0.5)
+
+```
+
+Construye tu ahora un vector de la forma: $(7,6.8,6.6,6.4,6.2,6)$
+
+```{r e5_1, exercise=TRUE}
+
+  seq(1,4,by=0.5)
+
+```
+
+```{r e5_1-solution}
+
+  seq(7,6,by=-0.2)
+
+```
+### Operaciones con vectores
+
+### escalar con vector
+### suma, resta, multiplicacion, división, potencias
+### cuando no son iguales
+### escalar con vector
+
+
+### Ejercicio 6
+
+Veamos como usar funciones matemáticas aplicadas a vectores, de forma que obtenemos un nuevo vector con la función aplicada a cada elemento. Vamos a aplicación la función $sin(x)$ aplicado al vector $(3,3.1,3.2,3.3,3.4)
+```{r }
+  x <- seq(3,3.4, by=0.1)
+  sin(x)
+
+```
+
+Construye tu ahora un vector que sea el resultado de aplicar la función $f(x)=e^x$ donde $x=(0,1,2,3,4,5)
+
+```{r e6_1, exercise=TRUE}
+
+  x <- seq(3,3.4, by=0.1)
+  sin(x)
+
+```
+
+```{r e6_1-solution}
+
+  x <- 0:5
+  exp(x)
+
+```
+
+
+
+## Data Frames
+### crear un data frame
+### acceso a un dataframe
+### nombres a las filas y columnas
+### añadir y quitar columnas a un data frame
+### añadir y quitar filas a un data frame
+
+## list
+
+### Creación de Listas
+
+Las listas a diferencia de los vectores los tipos de datos que contienen pueden ser diferentes. Veamos como crear una lista con la función `list`.
+
+```{r }
+
+  lista1 <- list(1:5, 3.8, c(2,5,7), "hola", "adios")
+  lista1
+
+```
+
+Construye tu ahora una lista que contenga el texto "Madrid", el texto "Barcelona", el número decimal 7.9 y finalmente un vector $(10,9,8,7,6,5)$.
+
+```{r listas_1, exercise=TRUE}
+
+  lista1 <- list(1:5, 3.8, c(2,5,7), "hola", "adios")
+  lista1  
+
+```
+
+```{r listas_1-solution}
+
+  lista1 <- list( "Madrid", "Barcelona", 7.9, 10:5)
+  lista1
+
+```
+
+### Acceso a los elementos de las Listas
+
+Veamos 
+
+## Funciones
+
